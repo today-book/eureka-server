@@ -7,13 +7,24 @@ spring:
 
 eureka:
   instance:
-    hostname: eureka-server
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:eureka}
   client:
     register-with-eureka: false
     fetch-registry: false
-
 management:
   endpoints:
     web:
       exposure:
         include: health,info,prometheus
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+    import: optional:file:.env[.properties]
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
