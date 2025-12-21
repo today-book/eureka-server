@@ -7,6 +7,8 @@ spring:
 
 eureka:
   instance:
+    status-page-url-path: /internal/health
+    health-check-url-path: /internal/health
     hostname: ${EUREKA_INSTANCE_HOSTNAME:eureka-server}
   client:
     register-with-eureka: false
