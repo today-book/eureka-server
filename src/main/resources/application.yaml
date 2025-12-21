@@ -1,5 +1,5 @@
 server:
-  port: 9100
+  port: 8080
 
 spring:
   application:
@@ -28,3 +28,8 @@ spring:
   config:
     activate:
       on-profile: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
